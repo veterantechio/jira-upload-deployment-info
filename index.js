@@ -41,7 +41,7 @@ async function submitDeploymentInfo(accessToken) {
             },
             {
                 associationType: 'serviceIdOrKeys',
-                value: serviceIds || []
+                value: serviceIds.split(',') || []
             }
         ],
         displayName: displayName || '',
