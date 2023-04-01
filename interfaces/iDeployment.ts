@@ -2,6 +2,16 @@ export interface iDeployment{
     schemaVersion?: string,
     deploymentSequenceNumber: any,
     updateSequenceNumber: any,
+    associations: [
+        {
+            "associationType": "issueKeys",
+            "values": string []
+        },
+        {
+            "associationType": "serviceIdOrKeys",
+            "values": string []
+        }
+    ],
     issueKeys: any [],
     displayName: string,
     url: string,
