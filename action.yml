@@ -55,6 +55,9 @@ inputs:
   environment-type:
     description: ''
     required: true
+  service-ids:
+     description: 'Comma delimited list of JIRA Service Ids'
+     required: true
 
 outputs:
   response:
