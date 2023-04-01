@@ -59,7 +59,12 @@ async function submitDeploymentInfo(accessToken) {
             id: environmentId || '',
             displayName: environmentDisplayName || '',
             type: environmentType || '',
-        }
+        },
+        commands: [
+            {
+                command: "initiate_deployment_gating"
+            }
+        ]
     };
     let bodyData = {
         deployments: [deployment],
