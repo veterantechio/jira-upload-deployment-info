@@ -58,7 +58,13 @@ inputs:
   service-ids:
      description: 'Comma delimited list of JIRA Service Ids'
      required: true
-
+  jira-account-id:
+      description: ''
+      required: true
+  jira-project-id:
+      description: ''
+      required: true   
+      
 outputs:
   response:
     description: 'Response from upload deployment info endpoint of Jira Software REST API'
