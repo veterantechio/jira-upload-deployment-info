@@ -28,6 +28,8 @@ async function submitDeploymentInfo(accessToken) {
     const environmentDisplayName = core.getInput('environment-display-name');
     const environmentType = core.getInput('environment-type');
     const serviceIds = core.getInput('service-ids');
+    const jiraAccountId = core.getInput('jira-account-id');
+    const jiraProjectId = core.getInput('jira-project-id');
     // console.log("lastUpdated: " + lastUpdated);
     lastUpdated = dateFormat(lastUpdated, "yyyy-mm-dd'T'HH:MM:ss'Z'");
     const deployment = {
@@ -68,6 +70,10 @@ async function submitDeploymentInfo(accessToken) {
     };
     let bodyData = {
         deployments: [deployment],
+        properties: {
+            accountId: jiraAccountId || '',
+            projectId: jiraProjectId || ''
+        },
     };
     bodyData = JSON.stringify(bodyData);
     const options = {
