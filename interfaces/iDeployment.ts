@@ -4,12 +4,12 @@ export interface iDeployment{
     updateSequenceNumber: any,
     associations: [
         {
-            "associationType": "issueKeys",
-            "values": string []
+            associationType: "issueKeys",
+            values: string []
         },
         {
-            "associationType": "serviceIdOrKeys",
-            "values": string []
+            associationType: "serviceIdOrKeys",
+            values: string []
         }
     ],
     issueKeys: any [],
