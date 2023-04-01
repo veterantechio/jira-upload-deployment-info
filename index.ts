@@ -66,11 +66,11 @@ async function submitDeploymentInfo(accessToken: any) {
             displayName: environmentDisplayName || '',
             type: environmentType || '',
         }
-        commands: [
-            {
-                command: "initiate_deployment_gating"
-            }
-        ]
+//         commands: [
+//             {
+//                 command: "initiate_deployment_gating"
+//             }
+//         ]
     };
 
     let bodyData: any = {
