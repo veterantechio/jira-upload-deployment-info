@@ -29,6 +29,7 @@ async function submitDeploymentInfo(accessToken: any) {
     const environmentId = core.getInput('environment-id');
     const environmentDisplayName = core.getInput('environment-display-name');
     const environmentType = core.getInput('environment-type');
+    const serviceIds = core.getInput('service-ids')
 
     // console.log("lastUpdated: " + lastUpdated);
     lastUpdated = dateFormat(lastUpdated, "yyyy-mm-dd'T'HH:MM:ss'Z'");
@@ -38,7 +39,16 @@ async function submitDeploymentInfo(accessToken: any) {
         schemaVersion: "1.0",
         deploymentSequenceNumber: deploymentSequenceNumber || process.env['GITHUB_RUN_ID'],
         updateSequenceNumber: updateSequenceNumber || process.env['GITHUB_RUN_ID'],
-        issueKeys: issueKeys.split(',') || [],
+        associations: [
+            {
+                associationType: 'issueKeys',
+                value: issueKeys.split(',') || []
+            },
+            {
+                associationType: 'serviceIdOrKeys',
+                value: serviceIds || []
+            }
+        ],
         displayName: displayName || '',
         url: url || `${github.context.payload.repository.url}/actions/runs/${process.env['GITHUB_RUN_ID']}`,
         description: description || '',
