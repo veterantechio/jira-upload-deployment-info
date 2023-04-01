@@ -42,11 +42,11 @@ async function submitDeploymentInfo(accessToken: any) {
         associations: [
             {
                 associationType: 'issueKeys',
-                value: issueKeys.split(',') || []
+                values: issueKeys.split(',') || []
             },
             {
                 associationType: 'serviceIdOrKeys',
-                value: serviceIds.split(',') || []
+                values: serviceIds.split(',') || []
             }
         ],
         displayName: displayName || '',
